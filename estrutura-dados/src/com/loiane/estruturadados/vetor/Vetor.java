@@ -9,16 +9,7 @@ public class Vetor {
         this.elementos = new String[capacidade];
         this.tamanho = 0;
     }
-    
-//    public void adiciona(String elemento) {
-//        for (int i=0; i<this.elementos.length; i++) {
-//            if (this.elementos[i] == null) {
-//                this.elementos[i] = elemento;
-//                break;
-//            }
-//        }
-//    }
-    
+        
     public Boolean adiciona(String elemento) {
         
         if(this.tamanho < this.elementos.length) {
@@ -28,6 +19,15 @@ public class Vetor {
         } else {
             return false;
         }
+    }
+    
+    public String busca(int posicao) {
+        
+        if(!(posicao >= 0 && posicao < tamanho)) {
+            throw new IllegalArgumentException("Posicao invalida");
+        }
+        
+        return this.elementos[posicao];
     }
     
     public int tamanho() {
